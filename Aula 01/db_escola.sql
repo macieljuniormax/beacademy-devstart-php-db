@@ -1,3 +1,11 @@
+-------------------------------------------------------------
+--                Comandos no Terminal                     --
+-- Iniciar MySQL – sudo mysql.server start
+-- Stop MySQL – sudo mysql.server stop
+-- Reiniciar MySQL – sudo mysql.server restart
+-- Verificar status – status do sudo mysql.server
+-- mysql -u root -p (colocar senha do bd)
+-------------------------------------------------------------
 -- Para criar um banco de dados --
 CREATE DATABASE db_escola;
 
