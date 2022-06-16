@@ -4,6 +4,19 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-class IndexController
+use App\Connection\Connection;
+
+class CategoryController extends AbstractController
 {
+  public function listAction(): void
+  {
+    $connection = Connection::getConnection();
+    $result = $connection->prepare('SELECT * FROM tb_category');
+    $result->execute();
+
+    $categoria = $result->fetch(\PDO::FETCH_ASSOC);
+
+    var_dump($categoria);
+    parent::render('category/list');
+  }
 }
