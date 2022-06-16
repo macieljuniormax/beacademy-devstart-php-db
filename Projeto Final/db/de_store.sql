@@ -12,6 +12,11 @@ CREATE TABLE tb_category(
 INSERT INTO
   tb_category (name, description)
 VALUES
+  ('Livros', 'Livros em Geral');
+
+INSERT INTO
+  tb_category (name, description)
+VALUES
   (
     'Informática',
     'Produtos de Informática e peças para computador'
