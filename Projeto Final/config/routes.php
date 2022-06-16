@@ -13,7 +13,8 @@ $routes = [
   '/' => createRoutes(IndexController::class, 'indexAction'),
   '/produtos' => createRoutes(ProductController::class, 'listAction'),
   '/produtos/novo' => createRoutes(ProductController::class, 'addAction'),
-  '/categorias' => createRoutes(CategoryController::class, 'listAction')
+  '/categorias' => createRoutes(CategoryController::class, 'listAction'),
+  '/categorias/nova' => createRoutes(CategoryController::class, 'addAction')
 ];
 
 // $routes = [
