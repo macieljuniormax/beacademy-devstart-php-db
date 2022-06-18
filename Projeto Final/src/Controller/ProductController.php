@@ -61,21 +61,33 @@ class ProductController extends AbstractController
     if ($_POST) {
       $newName = $_POST['name'];
       $newDescription = $_POST['description'];
-      $queryUpdate = "UPDATE tb_product SET name='{$newName}', description='{$newDescription}' WHERE id = '{$id}'";
-      $result = $connection->prepare($queryUpdate);
+      $newPrice = $_POST['price'];
+      $newPhoto = $_POST['photo'];
+      $NewQuantity = $_POST['quantity'];
+
+
+      $query = "UPDATE tb_product 
+                set name = '{$newName}',
+                description = '{$newDescription}',
+                valor = '{$newPrice}',
+                photo = '{$newPhoto}',
+                quantity = '{$NewQuantity}'
+                WHERE id = '{$id}'";
+
+      $result = $connection->prepare($query);
       $result->execute();
-      echo 'Produto Atualizado!';
+      echo "Produto Atualizado!";
     }
 
     $query = "SELECT * FROM tb_product WHERE id = '{$id}'";
     $result = $connection->prepare($query);
     $result->execute();
 
-    $queryCategories = "SELECT * FROM tb_category";
-    $categories = $connection->prepare($queryCategories);
-    $categories->execute();
+    // $queryCategories = "SELECT * FROM tb_category";
+    // $categories = $connection->prepare($queryCategories);
+    // $categories->execute();
     $data = $result->fetch(\PDO::FETCH_ASSOC);
-    $dataCategories = $categories->fetch(\PDO::FETCH_ASSOC);
-    parent::render('product/edit',  $dataCategories, $data);
+    // $dataCategories = $categories->fetch(\PDO::FETCH_ASSOC);
+    parent::render('product/edit', $data);
   }
 }
