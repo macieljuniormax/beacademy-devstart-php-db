@@ -1,4 +1,11 @@
-<h1>Listar Categorias</h1>
+<hr>
+<div class="d-flex justify-content-between align-items-center">
+  <h1>Listar Categorias</h1>
+
+  <div class="mb-3 text-end">
+    <a href="/categorias/nova" class="btn btn-outline-primary">Nova Categoria</a>
+  </div>
+</div>
 
 <table class="table table-hover table-striped align-middle;">
   <thead class="table-dark">
