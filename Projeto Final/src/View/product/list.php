@@ -22,12 +22,12 @@
   </thead>
   <tbody>
     <?php
-    while ($category = $data->fetch(\PDO::FETCH_ASSOC)) {
-      extract($category);
+    while ($product = $data->fetch(\PDO::FETCH_ASSOC)) {
+      extract($product);
       echo '<tr>';
       echo "<td class='align-middle'>{$id}</td>";
       echo "<td class='align-middle'>{$name}</td>";
-      echo "<td class='align-middle'>{$description}</td>";
+      echo "<td style='max-width: 300px;' class='align-middle'>{$description}</td>";
       echo "<td class='align-middle'><img style='width: 100px;' src='{$photo}' alt='{$name}'></td>";
       echo "<td class='align-middle'>{$valor}</td>";
       echo "<td class='align-middle'>{$quantity}</td>";

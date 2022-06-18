@@ -11,8 +11,12 @@ function createRoutes(string $controllerName, string $methodName)
 
 $routes = [
   '/' => createRoutes(IndexController::class, 'indexAction'),
+
   '/produtos' => createRoutes(ProductController::class, 'listAction'),
   '/produtos/novo' => createRoutes(ProductController::class, 'addAction'),
+  '/produtos/excluir' => createRoutes(ProductController::class, 'removeAction'),
+  '/produtos/editar' => createRoutes(ProductController::class, 'updateAction'),
+
   '/categorias' => createRoutes(CategoryController::class, 'listAction'),
   '/categorias/nova' => createRoutes(CategoryController::class, 'addAction'),
   '/categorias/excluir' => createRoutes(CategoryController::class, 'removeAction'),

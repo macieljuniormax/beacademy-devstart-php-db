@@ -1,3 +1,4 @@
+<hr>
 <h1>Cadastrar Categoria</h1>
 
 <form action="" method="post">
