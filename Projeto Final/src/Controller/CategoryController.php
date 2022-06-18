@@ -39,4 +39,25 @@ class CategoryController extends AbstractController
     $result->execute();
     echo "Categoria excluída!";
   }
+
+  public function updateAction(): void
+  {
+    $id = $_GET['id'];
+    $connection = Connection::getConnection();
+
+    if ($_POST) {
+      $newName = $_POST['name'];
+      $newDescription = $_POST['description'];
+      $queryUpdate = "UPDATE tb_category SET name='{$newName}', description='{$newDescription}' WHERE id = '{$id}'";
+      $result = $connection->prepare($queryUpdate);
+      $result->execute();
+      echo 'Categoria Atualizada!';
+    }
+
+    $query = "SELECT * FROM tb_category WHERE id = '{$id}'";
+    $result = $connection->prepare($query);
+    $result->execute();
+    $data = $result->fetch(\PDO::FETCH_ASSOC);
+    parent::render('category/edit',  $data);
+  }
 }
