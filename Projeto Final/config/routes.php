@@ -16,6 +16,7 @@ $routes = [
   '/produtos/novo' => createRoutes(ProductController::class, 'addAction'),
   '/produtos/excluir' => createRoutes(ProductController::class, 'removeAction'),
   '/produtos/editar' => createRoutes(ProductController::class, 'updateAction'),
+  '/produtos/relatorio' => createRoutes(ProductController::class, 'reportAction'),
 
   '/categorias' => createRoutes(CategoryController::class, 'listAction'),
   '/categorias/nova' => createRoutes(CategoryController::class, 'addAction'),

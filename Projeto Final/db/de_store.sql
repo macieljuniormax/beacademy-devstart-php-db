@@ -42,3 +42,12 @@ CREATE TABLE tb_product(
 );
 
 DESC tb_product;
+
+SELECT
+  prod.id,
+  prod.name,
+  prod.quantity,
+  cat.name AS category
+FROM
+  tb_product prod
+  INNER JOIN tb_category cat ON prod.category_id = cat.id;
